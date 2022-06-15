@@ -12,7 +12,7 @@ test('Should render a button with "type" and "dateTime" text displayed', () => {
       type="searchset"
       patient="Patient/1194"
       collectedDateTime={ collectedDateTime }
-      setPatient={ jest.fn() }
+      sendPatientId={ jest.fn() }
     />
   );
   expect(specimen.getByRole('button')).toBeInTheDocument();
@@ -26,7 +26,7 @@ test('Should change button class from "btn-info" to "btn-warning" when clicked',
       type="searchset"
       patient="Patient/1194"
       collectedDateTime={ collectedDateTime }
-      setPatient={ jest.fn() }
+      sendPatientId={ jest.fn() }
     />
   );
   const specButton = screen.getByRole('button');
@@ -36,4 +36,21 @@ test('Should change button class from "btn-info" to "btn-warning" when clicked',
 });
 
 
+test('Should call sendPatientId prop function when clicked with patient id arg', () => {
+  const patientId= "Patient/1194";
+  const sendPatientId = jest.fn(arg => arg); 
+  const specimen = render(
+    <Specimen
+      type="searchset"
+      patient={ patientId }
+      collectedDateTime={ collectedDateTime }
+      sendPatientId={ sendPatientId }
+    />
+  );
+  const specButton = screen.getByRole('button');
+  userEvent.click(specButton);
+  expect(sendPatientId).toHaveBeenCalled();
+  expect(sendPatientId).toHaveBeenCalledWith(patientId);
+  expect(sendPatientId.mock.results[0].value).toBe(patientId);
+});
 

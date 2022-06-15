@@ -6,12 +6,13 @@ const Specimen = ({
   type, 
   collectedDateTime, 
   patient, 
-  setPatient 
+  sendPatientId 
 }) => {
   const [variant, setVariant] = useState("info");
 
   const handleClick = (e) => {
     setVariant('warning');
+    sendPatientId(patient);
   }
 
   return (
@@ -26,7 +27,7 @@ Specimen.propTypes = {
   type: PropTypes.string.isRequired,
   collectedDateTime: PropTypes.string.isRequired,
   patient: PropTypes.string.isRequired,
-  setPatient: PropTypes.func.isRequired
+  sendPatientId: PropTypes.func.isRequired
 }
 
 export default Specimen;
