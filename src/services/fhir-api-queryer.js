@@ -1,4 +1,4 @@
-const FhirApiQueryer = async (args) => {
+const fhirApiQueryer = async (args) => {
   const init = {
     method: "GET",
     headers: { "Content-Type": "application/fhir+json" }
@@ -16,4 +16,4 @@ const FhirApiQueryer = async (args) => {
 */
 
 
-export default FhirApiQueryer;
+export default fhirApiQueryer;

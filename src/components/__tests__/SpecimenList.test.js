@@ -1,13 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import { within } from '@testing-library/dom';
 import SpecimenList from '../SpecimenList';
-import mockFhirBundle from '../__mocks__/fhir_bundle'
+import mockObservationBundle from '../../__mocks__/observation_bundle'
 
 
 test('Should render a group of at least one Specimen components', () => {
   const specimenList = render(
     <SpecimenList
-      specimenData={ mockFhirBundle }
+      specimenData={ mockObservationBundle }
     />
   );
   const group = screen.getByRole('group');
