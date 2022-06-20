@@ -1,0 +1,77 @@
+{
+  "resourceType": "Bundle",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Immunization",
+        "vaccineCode": {
+          "text": "Influenza, seasonal, injectable, preservative free"
+        },
+        "patient": {
+          "reference": "Patient/1471a46f-ae47-4128-bc0c-81adf0ea417b"
+        },
+        "occurrenceDateTime": "2013-12-27T12:20:53.090-06:00"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Immunization",
+        "vaccineCode": {
+          "text": "Pneumococcal conjugate PCV 13"
+        },
+        "patient": {
+          "reference": "Patient/1471a46f-ae47-4128-bc0c-81adf0ea417b"
+        },
+        "occurrenceDateTime": "2013-12-27T12:20:53-06:00"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Immunization",
+        "vaccineCode": {
+          "text": "rotavirus, monovalent"
+        },
+        "patient": {
+          "reference": "Patient/1471a46f-ae47-4128-bc0c-81adf0ea417b"
+        },
+        "occurrenceDateTime": "2013-06-09T13:20:53-05:00"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Immunization",
+        "vaccineCode": {
+          "text": "DTaP"
+        },
+        "patient": {
+          "reference": "Patient/71f77f31-195e-418b-b23a-05a25fea5403"
+        },
+        "occurrenceDateTime": "1993-09-01T17:24:33-05:00"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Immunization",
+        "vaccineCode": {
+          "text": "varicella"
+        },
+        "patient": {
+          "reference": "Patient/71f77f31-195e-418b-b23a-05a25fea5403"
+        },
+        "occurrenceDateTime": "1993-09-01T17:24:33-05:00"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Immunization",
+        "vaccineCode": {
+          "text": "IPV"
+        },
+        "patient": {
+          "reference": "Patient/71f77f31-195e-418b-b23a-05a25fea5403"
+        },
+        "occurrenceDateTime": "1993-09-01T17:24:33-05:00"
+      }
+    }
+  ]
+}
