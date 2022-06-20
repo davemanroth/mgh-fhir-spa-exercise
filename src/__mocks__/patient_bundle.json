@@ -1,0 +1,21 @@
+{ 
+  "resourceType": "Bundle",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1471a46f-ae47-4128-bc0c-81adf0ea417b",
+        "gender": "Male",
+        "birthDate": "1952-06-12"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "71f77f31-195e-418b-b23a-05a25fea5403",
+        "gender": "Female",
+        "birthDate": "1961-08-28"
+      }
+    }
+  ]
+}

@@ -1,13 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import { within } from '@testing-library/dom';
 import PatientList from '../PatientList';
-import mockObservationBundle from '../../__mocks__/observation_bundle'
+import mockPatientBundle from '../../__mocks__/patient_bundle'
 
+const { entry: patientArr } = mockPatientBundle;
 
-test('Should render a group of at least one Specimen components', () => {
+test('Should render a group of at least one Patient components', () => {
   const patientList = render(
     <PatientList
-      patientData={ mockObservationBundle }
+      patientData={ patientArr }
     />
   );
   const group = screen.getByRole('group');

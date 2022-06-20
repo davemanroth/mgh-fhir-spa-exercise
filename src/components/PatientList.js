@@ -11,13 +11,13 @@ const PatientList = ({ patientData }) => {
   return (
     <ButtonGroup vertical>
       { patientData.map( (patient, i) => {
-        const { type, collection, subject } = patient;
+        const { id, gender, birthDate } = patient.resource;
         return (
           <Patient 
             key={ i }
-            id={ type.coding[0].display }
-            patient={ subject.reference }
-            collectedDateTime={ collection.collectedDateTime }
+            id={ id }
+            gender={ gender }
+            birthDate={ birthDate }
             sendPatientId={ sendPatientId }
           />
         );
@@ -27,7 +27,7 @@ const PatientList = ({ patientData }) => {
 }
 
 PatientList.propTypes = {
-  observationData: PropTypes.array.isRequired
+  patientData: PropTypes.array.isRequired
 }
 
 export default PatientList;
