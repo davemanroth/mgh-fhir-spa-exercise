@@ -4,7 +4,7 @@ import mockPatientResource from '../__mocks__/patient_resource';
 
 const queryer = fhirApiQueryer();
 
-describe('FHIR API tests', () => {
+describe('FHIR API Bundle tests', () => {
   beforeEach( () => {
     fetch.resetMocks();
   });
@@ -62,8 +62,6 @@ describe('FHIR API tests', () => {
     expect(hasSameId).toBeTruthy();
     expect(result.length).toBe(3);
   });
-
-
 
 /*
   it('should have non-empty "gender" property for Patient resource type', () => {

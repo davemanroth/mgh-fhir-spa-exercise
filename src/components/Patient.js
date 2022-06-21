@@ -16,7 +16,7 @@ const Patient = ({
   }
 
   return (
-    <Button variant={ variant } onClick={ handleClick }>
+    <Button size="sm" variant={ variant } onClick={ handleClick }>
       <p>{ gender }</p>
       <p>{ birthDate }</p>
     </Button>

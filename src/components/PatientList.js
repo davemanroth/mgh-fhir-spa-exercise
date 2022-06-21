@@ -13,13 +13,15 @@ const PatientList = ({ patientData }) => {
       { patientData.map( (patient, i) => {
         const { id, gender, birthDate } = patient.resource;
         return (
-          <Patient 
-            key={ i }
-            id={ id }
-            gender={ gender }
-            birthDate={ birthDate }
-            sendPatientId={ sendPatientId }
-          />
+          <div className="my-1">
+            <Patient 
+              key={ i }
+              id={ id }
+              gender={ gender }
+              birthDate={ birthDate }
+              sendPatientId={ sendPatientId }
+            />
+          </div>
         );
       })}
     </ButtonGroup>
