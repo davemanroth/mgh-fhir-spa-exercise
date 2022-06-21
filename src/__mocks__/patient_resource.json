@@ -1,6 +1,6 @@
 {
   "id": "1471a46f-ae47-4128-bc0c-81adf0ea417b",
   "resourceType": "Patient",
-  "gender": "Male",
+  "gender": "male",
   "birthDate": "1952-06-12"
 }

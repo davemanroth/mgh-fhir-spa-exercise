@@ -27,13 +27,21 @@ const App = () => {
 
   return (
     <Container>
-      <Row>
-        <Col md="4">
-          <PatientList patientData={ patientData } />
-        </Col>
-        <Col md="8">
-        </Col>
-      </Row>
+      <header className="mb-5">
+        <h1>FHIR Patient Immunization Queryer</h1>
+      </header>
+      <Card>
+        <Card.Body>
+          <Row>
+            <Col md="4">
+              <PatientList patientData={ patientData } />
+            </Col>
+            <Col md="8">
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
+      <footer className="mt-5" />
     </Container>
   );
 }

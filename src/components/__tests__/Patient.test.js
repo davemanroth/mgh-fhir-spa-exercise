@@ -16,9 +16,12 @@ test('Should render a button with "type" and "dateTime" text displayed', () => {
       sendPatientId={ jest.fn() }
     />
   );
-  expect(patient.getByRole('button')).toBeInTheDocument();
-  expect(patient.getByText(gender)).toBeInTheDocument();
-  expect(patient.getByText(birthDate)).toBeInTheDocument();
+  const button = patient.getByRole('button');
+  expect(button).toBeInTheDocument();
+  const genderRegex = new RegExp(gender, "");
+  const birthDateRegex = new RegExp(birthDate, "");
+  expect(screen.getByText(genderRegex)).toBeInTheDocument();
+  expect(screen.getByText(birthDateRegex)).toBeInTheDocument();
 });
 
 test('Should change button class from "btn-info" to "btn-warning" when clicked', () => {

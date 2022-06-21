@@ -17,8 +17,8 @@ const Patient = ({
 
   return (
     <Button size="sm" variant={ variant } onClick={ handleClick }>
-      <p>{ gender }</p>
-      <p>{ birthDate }</p>
+      <p><strong>Gender: </strong>{ gender }<br />
+      <strong>Birth date: </strong>{ birthDate }</p>
     </Button>
   );
 }
