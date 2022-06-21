@@ -8,7 +8,6 @@ const fhirApiQueryer = () => {
     try {
       const bundle = await fetch(`http://hapi.fhir.org/baseR4/${type}`, init);
       const json = await bundle.json();
-      //console.log(json);
       return json;
     }
     catch(e) {

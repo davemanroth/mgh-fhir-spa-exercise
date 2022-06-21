@@ -9,22 +9,20 @@ const PatientList = ({ patientData }) => {
   }
 
   return (
-    <ButtonGroup vertical>
+    <div role="group" className="d-grid gap-2">
       { patientData.map( (patient, i) => {
         const { id, gender, birthDate } = patient.resource;
         return (
-          <div className="my-1">
-            <Patient 
-              key={ i }
-              id={ id }
-              gender={ gender }
-              birthDate={ birthDate }
-              sendPatientId={ sendPatientId }
-            />
-          </div>
+          <Patient 
+            key={ i }
+            id={ id }
+            gender={ gender }
+            birthDate={ birthDate }
+            sendPatientId={ sendPatientId }
+          />
         );
       })}
-    </ButtonGroup>
+    </div>
   );
 }
 

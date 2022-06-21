@@ -15,8 +15,9 @@ const App = () => {
   useEffect( () => {
     if (Object.keys(patientData).length === 0) {
       queryer.getBundle('Patient')
-        .then( (patients) => {
-          setPatientData(patients);
+        .then( (result) => {
+          const { entry } = result;
+          setPatientData(entry);
         })
         .catch( (e) => {
           console.error(e);
