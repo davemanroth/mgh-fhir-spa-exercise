@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import PatientList from './PatientList';
+import ImmunizationList from './ImmunizationList';
 import fhirApiQueryer from '../services/fhir-api-queryer';
 import './App.css';
 
@@ -11,6 +12,12 @@ const App = () => {
   const queryer = fhirApiQueryer();
 
   const [patientData, setPatientData] = useState([]);
+  const [immunizationData, setImmunizationData] = useState([]);
+
+  const getImmunizations = async (id) => {
+    const immunizations = await queryer.getImmunizations(id);
+    Object.hasOwn(immunizations, "entry") && setImmunizationData(immunizations.entry);
+  }
 
   useEffect( () => {
     if (Object.keys(patientData).length === 0) {
@@ -30,17 +37,23 @@ const App = () => {
       <header className="mb-5">
         <h1>FHIR Patient Immunization Queryer</h1>
       </header>
-      <Card>
-        <Card.Body>
-          <Row>
-            <Col md="4">
-              <PatientList patientData={ patientData } />
+          <Row className="justify-content-md-center">
+            <Col md="2">
+              <PatientList 
+                patientData={ patientData } 
+                getImmunizations={ getImmunizations }
+              />
             </Col>
-            <Col md="8">
+            <Col md="6">
+              <Card>
+                <Card.Body>
+                  <ImmunizationList
+                    immunizationData={ immunizationData }
+                  />
+                </Card.Body>
+              </Card>
             </Col>
           </Row>
-        </Card.Body>
-      </Card>
       <footer className="mt-5" />
     </Container>
   );

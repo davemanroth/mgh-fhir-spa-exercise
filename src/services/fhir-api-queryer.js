@@ -51,7 +51,8 @@ const fhirApiQueryer = () => {
   const getImmunizations = async (patientID) => {
     try {
       const immunizations = await fetch(`http://hapi.fhir.org/baseR4/Immunization?patient=${patientID}`, init);
-      return immunizations.json();
+      const json = await immunizations.json();
+      return json;
     }
     catch(e) {
       console.error(e);

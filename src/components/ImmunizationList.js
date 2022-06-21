@@ -5,7 +5,7 @@ import Immunization from './Immunization';
 const ImmunizationList = ({ immunizationData }) => {
   return (
     <>
-      { immunizationData.map( (entry, i) => {
+      { immunizationData.length > 0 ? immunizationData.map( (entry, i) => {
         const { vaccineCode, occurrenceDateTime: date } = entry.resource;
         return (
           <Immunization 
@@ -14,7 +14,10 @@ const ImmunizationList = ({ immunizationData }) => {
             date={ date }
           />
         );
-      })}
+      })
+      : "No immunization data available for this patient"
+      }
+
     </>
   );
 }

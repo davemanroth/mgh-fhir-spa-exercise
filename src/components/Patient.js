@@ -6,13 +6,13 @@ const Patient = ({
   id, 
   gender, 
   birthDate, 
-  sendPatientId 
+  getImmunizations 
 }) => {
   const [variant, setVariant] = useState("info");
 
   const handleClick = (e) => {
     setVariant('warning');
-    sendPatientId(id);
+    getImmunizations(id);
   }
 
   return (
@@ -27,7 +27,7 @@ Patient.propTypes = {
   id: PropTypes.string.isRequired,
   gender: PropTypes.string.isRequired,
   birthDate: PropTypes.string.isRequired,
-  sendPatientId: PropTypes.func.isRequired
+  getImmunizations: PropTypes.func.isRequired
 }
 
 export default Patient;

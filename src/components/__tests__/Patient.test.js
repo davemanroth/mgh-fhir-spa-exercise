@@ -13,7 +13,7 @@ test('Should render a button with "type" and "dateTime" text displayed', () => {
       id={ id }
       gender={ gender }
       birthDate={ birthDate }
-      sendPatientId={ jest.fn() }
+      getImmunizations={ jest.fn() }
     />
   );
   const button = patient.getByRole('button');
@@ -30,7 +30,7 @@ test('Should change button class from "btn-info" to "btn-warning" when clicked',
       id={ id }
       gender={ gender }
       birthDate={ birthDate }
-      sendPatientId={ jest.fn() }
+      getImmunizations={ jest.fn() }
     />
   );
   const patientButton = screen.getByRole('button');
@@ -39,21 +39,21 @@ test('Should change button class from "btn-info" to "btn-warning" when clicked',
   expect(patientButton).toHaveClass('btn-warning');
 });
 
-test('Should call sendPatientId prop function when clicked with patient id arg', () => {
-  const sendPatientId = jest.fn(arg => arg); 
+test('Should call getImmunizations prop function when clicked with patient id arg', () => {
+  const getImmunizations = jest.fn(arg => arg); 
   const patient = render(
     <Patient
       id={ id }
       gender={ gender }
       birthDate={ birthDate }
-      sendPatientId={ sendPatientId }
+      getImmunizations={ getImmunizations }
     />
   );
   const patientButton = screen.getByRole('button');
   userEvent.click(patientButton);
-  expect(sendPatientId).toHaveBeenCalled();
-  expect(sendPatientId).toHaveBeenCalledWith(id);
-  expect(sendPatientId.mock.results[0].value).toBe(id);
+  expect(getImmunizations).toHaveBeenCalled();
+  expect(getImmunizations).toHaveBeenCalledWith(id);
+  expect(getImmunizations.mock.results[0].value).toBe(id);
 });
 /*
 */

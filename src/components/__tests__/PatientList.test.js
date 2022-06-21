@@ -9,6 +9,7 @@ test('Should render a group of at least one Patient components', () => {
   const patientList = render(
     <PatientList
       patientData={ patientArr }
+      getImmunizations={ jest.fn() }
     />
   );
   const group = screen.getByRole('group');
