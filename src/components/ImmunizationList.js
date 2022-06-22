@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Immunization from './Immunization';
 
+/**
+ * Renders a series of Immunization components or outputs a message if
+ * no immunization data is available
+ */
 const ImmunizationList = ({ immunizationData }) => {
   return (
     <>
@@ -23,6 +27,7 @@ const ImmunizationList = ({ immunizationData }) => {
 }
 
 ImmunizationList.propTypes = {
+  /* An array of immunization data for a given patient */
   immunizationData: PropTypes.array.isRequired
 }
 

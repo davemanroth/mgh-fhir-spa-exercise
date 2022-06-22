@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Patient from './Patient';
 
+/**
+ * Renders an array of buttons based on patientData array prop. Also
+ * passes getImmunizations click handler up the chain to parent
+ * component
+ */
 const PatientList = ({ patientData, getImmunizations }) => {
 
   return (
@@ -24,7 +29,9 @@ const PatientList = ({ patientData, getImmunizations }) => {
 }
 
 PatientList.propTypes = {
+  /* An array of patient data */
   patientData: PropTypes.array.isRequired,
+  /* Click handler from Patient component passed to parent */
   getImmunizations: PropTypes.func.isRequired
 }
 
