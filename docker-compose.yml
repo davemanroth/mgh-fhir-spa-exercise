@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - 8080:8080
+    command: yarn start
+    volumes:
+      - ./src:/mgh-fhir-spa-exercise/src
+  test:
+    build:
+      context: .
+    environment:
+      - CI=true
+    command: yarn test
