@@ -15,7 +15,7 @@ describe('FHIR API Bundle tests', () => {
       queryer.getBundle(type).then( (res) => {
         expect(res.hasOwnProperty("resourceType")).toBe(true);
         expect(res.resourceType).toEqual("Bundle");
-      });
+      }).catch( (e) => console.error(e));
     });//forEach
   });
 
@@ -25,7 +25,7 @@ describe('FHIR API Bundle tests', () => {
     queryer.getBundle("Immunization").then( (res) => {
       expect(res.hasOwnProperty("entry")).toBe(true);
       expect(res.entry.length).toBeGreaterThan(0);
-    });
+    }).catch( (e) => console.error(e));
   });
 
   it('should have name of vaccine for Immunization bundle', () => {
@@ -35,7 +35,7 @@ describe('FHIR API Bundle tests', () => {
       expect(resource.hasOwnProperty("vaccineCode")).toBe(true);
       expect(resource.vaccineCode.hasOwnProperty("text")).toBe(true);
       expect(resource.vaccineCode.text).toBe("Influenza, seasonal, injectable, preservative free");
-    });
+    }).catch( (e) => console.error(e));
   });
 
   it('should have an occurrenceDateTime prop for Immunization bundle', () => {
@@ -44,7 +44,7 @@ describe('FHIR API Bundle tests', () => {
       const resource = res.entry[0].resource;
       expect(resource.hasOwnProperty("occurrenceDateTime")).toBe(true);
       expect(resource.occurrenceDateTime).toBe("2013-12-27T12:20:53.090-06:00");
-    });
+    }).catch( (e) => console.error(e));
   });
 
   it('should find 3 immunizations for a specific patient', async () => {
