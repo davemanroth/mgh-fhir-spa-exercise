@@ -6,11 +6,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Docker commands
 
 ### `docker-compose build app`
+Builds the app
 
-Builds the app, Runs it in the development mode.\
+### `docker-compose up app`
+Deploys built app
+
 Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
-
-The page will reload when you make changes.\
 
 ### `docker-compose run test`
 
